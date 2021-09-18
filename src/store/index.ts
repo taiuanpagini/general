@@ -6,6 +6,12 @@ import persistReducers from './persistReducers';
 
 import { rootReducer } from './ducks';
 
+declare global {
+  interface Console {
+      tron: any
+  }
+}
+
 const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
 
 const sagaMiddleware = createSagaMiddleware({sagaMonitor});
